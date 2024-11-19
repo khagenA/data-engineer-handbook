@@ -145,7 +145,9 @@ There are two methods to get Postgres running locally.
 
 1. Find the container id by running `docker ps` - under CONTAINER ID
 2. Go inside the container by executing `docker exec -it <container_name_or_id> bash`
-3. Run `pg_restore -U $POSTGRES_USER -d $POSTGRES_DB /docker-entrypoint-initdb.d/data.dump` 
+3. Run `pg_restore -U $POSTGRES_USER -d $POSTGRES_DB /docker-entrypoint-initdb.d/data.dump`
+4. What worked for me instead of 3 `pg_restore -U postgres -d my_postgres_db /path/to/your/data.dump`
+OR docker cp /path/to/your/data.dump my-postgres-container:/docker-entrypoint-initdb.d/
 
 ---
 
